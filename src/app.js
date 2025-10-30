@@ -8,6 +8,7 @@ const errorHandler = require("./middleware/errorHandler.js");
 const airlineRoutes = require("./modules/airlines/airlineRoute.js");
 const destinationRoutes = require("./modules/destinations/destinationRoute.js");
 const fareRoutes = require("./modules/fares/fareRoute.js");
+const searchRoutes = require("./modules/searchRecords/searchRoute.js");
 const { connectToDatabase } = require("./config/database.js");
 
 const app = express();
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 app.use("/airlines", airlineRoutes);
 app.use("/destinations", destinationRoutes);
 app.use("/fares", fareRoutes);
+app.use("/search", searchRoutes);
 app.use(errorHandler);
 
 // ✅ Start server only after Firestore connects

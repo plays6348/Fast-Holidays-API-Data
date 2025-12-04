@@ -2,7 +2,7 @@ const { db } = require("../../config/database.js");
 
 const searchFlights = async (req, res, next) => {
   try {
-    const { departure, destination } = req.body;
+    const { departure, destination } = req.params;
 
     if (!departure || !destination) {
       return res
